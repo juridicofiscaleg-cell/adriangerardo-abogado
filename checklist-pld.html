@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Checklist PLD — ¿Tu negocio está expuesto?</title>
+    <meta name="description" content="Chequeo rápido de riesgos PLD/FT. Identifica señales de alerta y agenda una revisión profesional.">
+    <link rel="icon" href="images/foto.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1714;
+            --muted: #6b635b;
+            --line: #e4ddd4;
+            --panel: #ffffff;
+            --accent: #7a2430;
+            --accent-soft: rgba(122, 36, 48, 0.08);
+            --ok: #128C7E;
+            --bg-top: #f3ebe2;
+            --bg-bottom: #e8e0d6;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background:
+                radial-gradient(ellipse 120% 60% at 50% -10%, #faf4ec 0%, transparent 55%),
+                linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+            color: var(--ink);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        main {
+            max-width: 440px;
+            margin: 0 auto;
+            padding: 28px 20px 40px;
+        }
+
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+            text-decoration: none;
+            margin-bottom: 22px;
+        }
+
+        .back:hover { color: var(--accent); }
+
+        .eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: "Libre Baskerville", Georgia, serif;
+            font-size: clamp(24px, 6.5vw, 30px);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 10px;
+        }
+
+        .lead {
+            font-size: 14.5px;
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 6px 6px 4px;
+            margin-bottom: 16px;
+        }
+
+        .item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 14px 12px;
+            border-radius: 14px;
+        }
+
+        .item + .item {
+            border-top: 1px solid var(--line);
+        }
+
+        .check {
+            width: 22px;
+            height: 22px;
+            border-radius: 7px;
+            border: 1.5px solid #cfc4b8;
+            flex-shrink: 0;
+            margin-top: 1px;
+            background: #fff;
+        }
+
+        .item strong {
+            display: block;
+            font-size: 14.5px;
+            font-weight: 650;
+            margin-bottom: 2px;
+        }
+
+        .item span {
+            display: block;
+            font-size: 12.5px;
+            color: var(--muted);
+        }
+
+        .note {
+            background: var(--accent-soft);
+            border: 1px solid rgba(122, 36, 48, 0.14);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 18px;
+        }
+
+        .note p {
+            font-size: 13.5px;
+            color: var(--ink);
+        }
+
+        .note strong {
+            color: var(--accent);
+        }
+
+        .cta {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 15px 16px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            transition: transform 0.15s ease, opacity 0.15s ease;
+        }
+
+        .btn:active { transform: scale(0.985); }
+
+        .btn-primary {
+            background: var(--ok);
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background: var(--panel);
+            color: var(--ink);
+            border: 1px solid var(--line);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 28px;
+            font-size: 11px;
+            color: #9a9086;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <a class="back" href="index.html">‹ Volver</a>
+
+        <p class="eyebrow">Gratis · 60 segundos</p>
+        <h1>¿Tu negocio está expuesto en PLD?</h1>
+        <p class="lead">
+            Chequeo rápido. Si marcas 2 o más, conviene una revisión profesional
+            antes de que se convierta en un problema.
+        </p>
+
+        <div class="card">
+            <div class="item">
+                <div class="check" aria-hidden="true"></div>
+                <div>
+                    <strong>Recibes efectivo o pagos de terceros</strong>
+                    <span>Clientes, socios o “prestanombres” que no son fáciles de identificar.</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="check" aria-hidden="true"></div>
+                <div>
+                    <strong>No tienes un expediente KYC actualizado</strong>
+                    <span>Identificación, actividad económica y perfil de riesgo del cliente.</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="check" aria-hidden="true"></div>
+                <div>
+                    <strong>No sabes si eres actividad vulnerable</strong>
+                    <span>Muchos giros ya están obligados y no lo tienen claro.</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="check" aria-hidden="true"></div>
+                <div>
+                    <strong>Nunca has hecho un aviso o revisión PLD</strong>
+                    <span>Sin políticas, capacitación o monitoreo básico de operaciones.</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="check" aria-hidden="true"></div>
+                <div>
+                    <strong>Te piden facturar operaciones “raras”</strong>
+                    <span>Montos altos, urgencia injustificada o falta de documentación.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            <p>
+                <strong>Esto no es un diagnóstico completo.</strong>
+                Es una alerta temprana. Si algo te sonó familiar, te ayudo a
+                revisarlo bien y aterrizar qué te aplica (y qué no).
+            </p>
+        </div>
+
+        <div class="cta">
+            <a class="btn btn-primary"
+               href="https://wa.me/526623046770?text=Hola%2C%20revis%C3%A9%20el%20checklist%20PLD%20y%20quiero%20una%20orientaci%C3%B3n"
+               target="_blank" rel="noopener">
+                Quiero una orientación por WhatsApp
+            </a>
+            <a class="btn btn-secondary"
+               href="https://calendar.app.google/Jcr551tUoW1QM57PA"
+               target="_blank" rel="noopener">
+                Agendar revisión
+            </a>
+        </div>
+
+        <footer>© 2026 adriangerardo.abogado · Lic. Adrián Gerardo</footer>
+    </main>
+</body>
+</html>
