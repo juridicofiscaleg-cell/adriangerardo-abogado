@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>adriangerardo.abogado — Lic. Adrián Gerardo</title>
-    <meta name="description" content="Lic. Adrián Gerardo, abogado. Consultas legales, asesoría jurídica y contacto directo. Agenda tu cita o escríbeme por WhatsApp.">
+    <title>Lic. Adrián Gerardo — Especialista en PLD/FT</title>
+    <meta name="description" content="Lic. Adrián Gerardo, especialista en PLD/FT. Consultas legales y contacto directo.">
     <link rel="icon" href="images/foto.jpg">
     <link rel="apple-touch-icon" href="images/foto.jpg">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="adriangerardo.abogado">
-    <meta property="og:title" content="adriangerardo.abogado — Lic. Adrián Gerardo">
-    <meta property="og:description" content="Consultas legales, asesoría jurídica y contacto directo.">
+    <meta property="og:title" content="Lic. Adrián Gerardo — Especialista en PLD/FT">
+    <meta property="og:description" content="Consultas legales, PLD/FT y contacto directo.">
     <meta property="og:image" content="images/foto.jpg">
     <meta property="og:locale" content="es_MX">
     <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --ink: #1a1714;
+            --muted: #6b635b;
+            --line: #e4ddd4;
+            --surface: #fffdf9;
+            --panel: #ffffff;
+            --accent: #7a2430;
+            --accent-soft: rgba(122, 36, 48, 0.08);
+            --bg-top: #f3ebe2;
+            --bg-bottom: #e8e0d6;
+        }
+
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -25,31 +40,36 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f8f9fa;
-            color: #0f172a;
-            line-height: 1.6;
+            font-family: "DM Sans", sans-serif;
+            background:
+                radial-gradient(ellipse 120% 60% at 50% -10%, #faf4ec 0%, transparent 55%),
+                linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+            color: var(--ink);
+            line-height: 1.5;
+            min-height: 100vh;
             overflow-x: hidden;
         }
 
         main {
-            max-width: 560px;
+            max-width: 440px;
             margin: 0 auto;
-            padding: 48px 20px 24px;
+            padding: 40px 20px 16px;
         }
 
         .hero {
             text-align: center;
-            padding: 8px 0 20px;
+            padding: 4px 0 28px;
         }
 
         .hero-photo {
-            width: 88px;
-            height: 88px;
-            border-radius: 50%;
+            width: 96px;
+            height: 96px;
+            border-radius: 28px;
             object-fit: cover;
-            border: 3px solid #e2e8f0;
-            margin: 0 auto 14px;
+            object-position: center top;
+            border: 2px solid #fff;
+            box-shadow: 0 8px 28px rgba(26, 23, 20, 0.14);
+            margin: 0 auto 18px;
             display: block;
         }
 
@@ -57,169 +77,142 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #1e40af, #0891b2);
+            background: var(--accent);
             color: white;
             font-size: 28px;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
 
         .hero-name {
-            font-size: 26px;
-            font-weight: 800;
-            color: #0f172a;
-            letter-spacing: -0.5px;
-            margin-bottom: 6px;
+            font-family: "Libre Baskerville", Georgia, serif;
+            font-size: clamp(26px, 7vw, 32px);
+            font-weight: 700;
+            color: var(--ink);
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 8px;
         }
 
-        .hero-sub {
+        .hero-specialty {
             font-size: 14px;
-            color: #64748b;
-            margin-bottom: 4px;
-        }
-
-        .hero-cedula {
-            font-size: 11px;
-            color: #94a3b8;
-            margin-bottom: 12px;
-        }
-
-        .hero-divider {
-            width: 36px;
-            height: 3px;
-            background: linear-gradient(90deg, #1e40af, #0891b2);
-            border-radius: 2px;
-            margin: 0 auto;
-        }
-
-        .section {
-            margin-bottom: 18px;
-        }
-
-        .section-label {
-            font-size: 12px;
-            font-weight: 800;
-            color: #0e7490;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.02em;
             margin-bottom: 10px;
+        }
+
+        .hero-handle {
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .link-card {
             display: flex;
             align-items: center;
             gap: 14px;
-            padding: 16px;
-            background: white;
-            border: 1.5px solid #cbd5e1;
-            border-radius: 14px;
+            padding: 15px 16px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
             text-decoration: none;
-            color: #0f172a;
-            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
-            transition: all 0.15s;
+            color: var(--ink);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+            transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent);
+            opacity: 0.85;
         }
 
         .link-card:active {
-            transform: scale(0.98);
-            background: #f8f9fa;
-            border-color: #94a3b8;
+            transform: scale(0.985);
         }
 
         @media (min-width: 900px) {
             .link-card:hover {
-                border-color: #94a3b8;
-                box-shadow: 0 4px 14px rgba(15, 23, 42, 0.1);
-                transform: translateY(-1px);
+                border-color: #d2c7ba;
+                box-shadow: 0 10px 28px rgba(26, 23, 20, 0.08);
+                transform: translateY(-2px);
             }
         }
 
         .card-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background: #f1f5f9;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: var(--accent-soft);
+            color: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
             flex-shrink: 0;
+        }
+
+        .card-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .link-card.whatsapp .card-icon {
+            background: rgba(18, 140, 126, 0.1);
+            color: #128C7E;
+        }
+
+        .link-card.whatsapp::before { background: #128C7E; }
+
+        .link-card.instagram .card-icon {
+            background: rgba(122, 36, 48, 0.1);
+            color: var(--accent);
         }
 
         .card-body { flex: 1; min-width: 0; }
 
         .card-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #0f172a;
+            font-size: 15px;
+            font-weight: 650;
+            color: var(--ink);
         }
 
         .card-sub {
-            font-size: 12px;
-            color: #94a3b8;
+            font-size: 12.5px;
+            color: var(--muted);
             margin-top: 2px;
         }
 
         .card-arrow {
-            color: #d1d5db;
-            font-size: 16px;
-            flex-shrink: 0;
-        }
-
-        .link-card.whatsapp {
-            background: rgba(37, 211, 102, 0.07);
-            border-color: rgba(37, 211, 102, 0.28);
-        }
-
-        .link-card.whatsapp .card-icon {
-            background: rgba(37, 211, 102, 0.12);
-            border: 1px solid rgba(37, 211, 102, 0.2);
-        }
-
-        .link-card.whatsapp .card-arrow { color: #86efac; }
-
-        @media (min-width: 900px) {
-            .link-card.whatsapp:hover {
-                background: rgba(37, 211, 102, 0.11);
-                border-color: rgba(37, 211, 102, 0.4);
-                box-shadow: 0 4px 14px rgba(37, 211, 102, 0.12);
-                transform: translateY(-1px);
-            }
-        }
-
-        .link-card.instagram {
-            background: linear-gradient(135deg, rgba(131, 58, 180, 0.06), rgba(253, 29, 29, 0.04), rgba(252, 176, 69, 0.06));
-            border-color: rgba(131, 58, 180, 0.2);
-        }
-
-        .link-card.instagram .card-icon {
-            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-            color: white;
+            color: #b8aea2;
             font-size: 18px;
-        }
-
-        .link-card.instagram .card-arrow { color: #c084fc; }
-
-        @media (min-width: 900px) {
-            .link-card.instagram:hover {
-                border-color: rgba(131, 58, 180, 0.35);
-                box-shadow: 0 4px 14px rgba(131, 58, 180, 0.1);
-                transform: translateY(-1px);
-            }
+            flex-shrink: 0;
+            font-weight: 400;
         }
 
         footer {
             text-align: center;
-            padding: 24px 20px 32px;
+            padding: 28px 20px 36px;
             font-size: 11px;
-            color: #94a3b8;
+            color: #9a9086;
         }
-
-        footer a {
-            color: #64748b;
-            text-decoration: none;
-        }
-
-        footer a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -227,13 +220,10 @@
     <footer id="footer"></footer>
 
     <script>
-        // ═══════════════════════════════════════════════
-        //  EDITA AQUÍ — Personaliza tu página
-        // ═══════════════════════════════════════════════
         const CONFIG = {
             brand: "adriangerardo.abogado",
             fullName: "Lic. Adrián Gerardo",
-            cedula: "",
+            specialty: "Especialista en PLD/FT",
             initials: "AG",
             photo: "images/foto.jpg",
 
@@ -241,26 +231,33 @@
                 calendar: {
                     url: "https://calendar.app.google/Jcr551tUoW1QM57PA",
                     title: "Agenda una consulta",
-                    subtitle: "Elige día y hora disponible"
+                    subtitle: "Elige día y hora disponible",
+                    icon: "calendar"
                 },
                 whatsapp: {
                     url: "https://wa.me/526623046770?text=Hola%2C%20me%20interesa%20agendar%20una%20consulta%20legal",
                     title: "Escríbeme por WhatsApp",
-                    subtitle: "Respuesta en horario laboral"
+                    subtitle: "Respuesta en horario laboral",
+                    icon: "whatsapp"
                 },
                 instagram: {
                     url: "https://instagram.com/adriangerardo.abogado",
                     title: "Sígueme en Instagram",
-                    subtitle: "@adriangerardo.abogado"
+                    subtitle: "@adriangerardo.abogado",
+                    icon: "instagram"
                 }
             },
 
             footer: {
-                year: new Date().getFullYear(),
-                privacyUrl: ""  // ej: "/aviso-privacidad.html" — deja "" para ocultar
+                year: new Date().getFullYear()
             }
         };
-        // ═══════════════════════════════════════════════
+
+        const ICONS = {
+            calendar: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>`,
+            whatsapp: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 19.5 5 21l1.2-3.5A8 8 0 1 1 12 20a8.1 8.1 0 0 1-4.5-1.5Z"/><path d="M9.2 9.8c.3-.6.5-.6.8-.6h.6c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.2-.1.4.1.7.5.7 1.2 1.4 2 1.9.3.2.5.2.7 0l.6-.5c.2-.2.4-.2.6-.1l1.8.7c.3.1.4.3.4.5v.7c0 .3-.2.5-.5.6A4.4 4.4 0 0 1 15 17c-2.4 0-4.6-1.8-5.7-3.5-.6-.9-1-1.9-1.1-2.6 0-.4.1-.7.4-1.1Z"/></svg>`,
+            instagram: `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>`
+        };
 
         const app = document.getElementById("app");
 
@@ -268,64 +265,47 @@
             ? `<img class="hero-photo" src="${CONFIG.photo}" alt="${CONFIG.fullName}">`
             : `<div class="hero-photo placeholder" aria-hidden="true">${CONFIG.initials}</div>`;
 
-        const cedulaHtml = CONFIG.cedula
-            ? `<p class="hero-cedula">${CONFIG.cedula}</p>`
-            : "";
-
         app.innerHTML = `
             <section class="hero">
                 ${photoHtml}
-                <h1 class="hero-name">${CONFIG.brand}</h1>
-                <p class="hero-sub">${CONFIG.fullName}</p>
-                ${cedulaHtml}
-                <div class="hero-divider"></div>
+                <h1 class="hero-name">${CONFIG.fullName}</h1>
+                <p class="hero-specialty">${CONFIG.specialty}</p>
+                <p class="hero-handle">${CONFIG.brand}</p>
             </section>
 
-            <section class="section">
-                <p class="section-label">Consultas</p>
+            <div class="links">
                 <a class="link-card" href="${CONFIG.links.calendar.url}" target="_blank" rel="noopener">
-                    <div class="card-icon">📅</div>
+                    <div class="card-icon">${ICONS.calendar}</div>
                     <div class="card-body">
                         <div class="card-title">${CONFIG.links.calendar.title}</div>
                         <div class="card-sub">${CONFIG.links.calendar.subtitle}</div>
                     </div>
-                    <span class="card-arrow">→</span>
+                    <span class="card-arrow">›</span>
                 </a>
-            </section>
 
-            <section class="section">
-                <p class="section-label">Contacto</p>
                 <a class="link-card whatsapp" href="${CONFIG.links.whatsapp.url}" target="_blank" rel="noopener">
-                    <div class="card-icon">💬</div>
+                    <div class="card-icon">${ICONS.whatsapp}</div>
                     <div class="card-body">
                         <div class="card-title">${CONFIG.links.whatsapp.title}</div>
                         <div class="card-sub">${CONFIG.links.whatsapp.subtitle}</div>
                     </div>
-                    <span class="card-arrow">→</span>
+                    <span class="card-arrow">›</span>
                 </a>
-            </section>
 
-            <section class="section">
-                <p class="section-label">Redes</p>
                 <a class="link-card instagram" href="${CONFIG.links.instagram.url}" target="_blank" rel="noopener">
-                    <div class="card-icon">📷</div>
+                    <div class="card-icon">${ICONS.instagram}</div>
                     <div class="card-body">
                         <div class="card-title">${CONFIG.links.instagram.title}</div>
                         <div class="card-sub">${CONFIG.links.instagram.subtitle}</div>
                     </div>
-                    <span class="card-arrow">→</span>
+                    <span class="card-arrow">›</span>
                 </a>
-            </section>
+            </div>
         `;
 
-        document.title = `${CONFIG.brand} — ${CONFIG.fullName}`;
-
-        const footer = document.getElementById("footer");
-        const privacyLink = CONFIG.footer.privacyUrl
-            ? `<br><a href="${CONFIG.footer.privacyUrl}">Aviso de Privacidad</a>`
-            : "";
-
-        footer.innerHTML = `© ${CONFIG.footer.year} ${CONFIG.brand} · ${CONFIG.fullName}${privacyLink}`;
+        document.title = `${CONFIG.fullName} — ${CONFIG.specialty}`;
+        document.getElementById("footer").innerHTML =
+            `© ${CONFIG.footer.year} ${CONFIG.brand}`;
     </script>
 </body>
 </html>
